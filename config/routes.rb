@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'index/new'
+  get 'jobs/index'
+
+  get 'jobs/new'
+
+  resources :jobs
+  root 'jobs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
