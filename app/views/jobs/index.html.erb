@@ -4,5 +4,6 @@
     <h2><%= link_to job.title, job.url %></h2>
     <p><%= job.company %>
   </div>
+<p><%= paginate @jobs %></p>
 <% end %>
 <p><%= link_to "Add a job", new_job_path %></p>
