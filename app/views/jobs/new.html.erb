@@ -2,5 +2,6 @@
   <%= form.input :title, label: "Job title" %>
   <%= form.input :company, label: "Your company" %>
   <%= form.input :url, label: "Link to job" %>
+  <%= form.collection_radio_buttons :category, [[1, "Job"] , [2, "Internship"]], :first, :last %>
   <%= form.button :submit %>
 <% end %>

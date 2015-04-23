@@ -1,8 +1,15 @@
 <h1>Jobs</h1>
+<hr />
+
 <% @jobs.each do |job| %>
   <div class="job">
     <h2><%= link_to job.title, job.url %></h2>
-    <p><%= job.company %>
+    <p><% if job.category == 1%>
+        Job
+      <% else %>
+        Internship
+      <% end %></p>
+    <p><%= job.company %></p>
   </div>
 <p><%= paginate @jobs %></p>
 <% end %>
