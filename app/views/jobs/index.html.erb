@@ -1,6 +1,20 @@
-<h1>Jobs</h1>
-<hr />
+<div id="container">
+<div id="leftSidebar">
+  <h1>Will Code For Food</h1>
+  
+  <p>Coding jobs for 
+    <ul>
+      <li>CS Students</li>
+      <li>Bootcamp Alumni</li>
+      <li>Self Taugh Developers/li>
+    </ul>
+  No experience required.<br />
+  Free to Post (premium posts coming soon).<br />
+  Free to Search.</p>
+  <p><%= link_to "Click Here To Add A Job", new_job_path %></p>
+</div>
 
+<div id="rightSidebar">
 <% @jobs.each do |job| %>
   <div class="job">
     <h2><%= link_to job.title, job.url %></h2>
@@ -13,4 +27,5 @@
   </div>
 <p><%= paginate @jobs %></p>
 <% end %>
-<p><%= link_to "Add a job", new_job_path %></p>
+</div>
+</div>

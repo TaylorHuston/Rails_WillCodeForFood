@@ -1,12 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: #a71b3e;
+  background: #2f2f2f;
   color: white;
   font: 14px/1.5 Helvetica, Arial, sans-serif;
   margin: 20px auto;
-  width: 500px;
+  width: 700px;
 }
 
 a {
-  color: #efaaca;
   text-decoration: none;
 }
+
+
+#container {
+  margin-top: 50px;
+  display: flex;
+}
+
+#leftSidebar {
+  width: 300px;
+  padding-right: 20px;
+  
+}
+
+.job {
+  background-color: whitesmoke;
+  color: darkslategrey;
+  
+  width: 450px;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
