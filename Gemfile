@@ -4,6 +4,7 @@ gem 'simple_form'
 gem 'kaminari'
 gem 'twitter-bootstrap-rails'
 gem 'autoprefixer-rails'
+gem 'bootstrap-material-design'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
