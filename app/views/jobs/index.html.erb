@@ -24,6 +24,7 @@
         Internship
       <% end %></p>
     <p><%= job.company %></p>
+    <p><%= job.created_at.to_date %></p>
   </div>
 <p><%= paginate @jobs %></p>
 <% end %>
