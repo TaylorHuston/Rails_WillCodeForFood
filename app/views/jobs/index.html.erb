@@ -25,7 +25,7 @@
             Internship
           <% end %> - <%= job.created_at.to_date %></p>
         <p><%= job.company %><br />
-           <%= link_to "Apply Here", job.url, class: 'btn btn-success' %></p>
+           <%= link_to "Apply Here", job.url, class: 'btn btn-primary btn-raised' %></p>
       </div>
       <p><%= paginate @jobs %></p>
 
