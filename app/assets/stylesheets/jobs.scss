@@ -1,5 +1,13 @@
-@import "bootstrap-sprockets"
-@import "bootstrap"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background: #2f2f2f;
+  color: white;
+  font: 14px/1.5 Helvetica, Arial, sans-serif;
+  margin: 20px auto;
+  width: 700px;
+}
 
 //* {
 //  box-sizing: border-box;

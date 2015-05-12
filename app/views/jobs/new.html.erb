@@ -1,7 +1,47 @@
-<%= simple_form_for @job do |form| %>
-  <%= form.input :title, label: "Job title" %>
-  <%= form.input :company, label: "Your company" %>
-  <%= form.input :url, label: "Link to job" %>
-  <%= form.collection_radio_buttons :category, [[1, "Job"] , [2, "Internship"]], :first, :last %>
-  <%= form.button :submit %>
+<%= form_for(@job, html: {class: 'form-horizontal'}) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :title, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :company, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :company, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :url, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :url, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :category, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.radio_button :category, 1 %>
+      <%= f.label :category, 'Job', :value => 1, class: 'radio-inline' %>    
+      <br />
+      <%= f.radio_button :category, 2 %>
+      <%= f.label :category, 'Internship', :value => 2, class: 'radio-inline' %>      
+    </div>
+  </div>
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit 'Submit Job', class: 'btn' %>
+    </div>
+  </div>
 <% end %>
