@@ -1,9 +1,13 @@
+@import "materialize";
+
 body {
   background: #2f2f2f;
   color: white;
   font: 14px/1.5 Helvetica, Arial, sans-serif;
-  margin: 20px auto;
-  width: 700px;
+}
+
+.job {
+  padding: 20px 10%;
 }
 
 //* {
