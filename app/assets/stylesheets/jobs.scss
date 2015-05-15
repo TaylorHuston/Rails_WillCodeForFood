@@ -1,9 +1,13 @@
 @import "materialize";
 
-body {
-  background: #2f2f2f;
-  color: white;
-  font: 14px/1.5 Helvetica, Arial, sans-serif;
+
+main {
+  margin-top: 20px;
+}
+
+#leftSidebar {
+  position: fixed;
+  top: 120px;
 }
 
 .job {

@@ -1,41 +1,44 @@
-<div id="container" class="container">
-  <div class="row">
-    <%= render partial: "navigation" %>
-  </div>
-  <div class="row z-depth-2">
-    <div id="leftSidebar" class="col s5">
-      <strong class="brand-logo">Will Code For Food</strong>
-      <p>Coding jobs for 
-        <ul>
-          <li>CS Students</li>
-          <li>Bootcamp Alumni</li>
-          <li>Self Taugh Developers</li>
-        </ul>
-      No experience required.<br />
-      Free to Post.<br />
-      Free to Search.</p>
-      <p><%= link_to "Post A Job", new_job_path, class: "btn-flat blue-grey white-text"%></p>
-    </div>
 
-    <div id="rightSidebar" class="col s7">
-    <% @jobs.each do |job| %>
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title"><%= link_to job.title, job.url, class: "blue-text lighten-5" %></span><br />
-          <% if job.category == 1 %>
-            Job
-          <% else %>
-            Internship
-          <% end %> - <%= job.created_at.to_date %><br />
-          <%= job.company %>
-        </div>
-        <div class="card-action">
-           <%= link_to "Apply Here", job.url, class: "waves-green btn-flat" %>
-        </div>
+<%= render partial: "navigation" %>
+
+<main>
+  <div id="container" class="container">
+
+    <div class="row">
+      <div id="leftSidebar" class="col m4 hide-on-small-only">
+        <strong class="brand-logo">Will Code For Food</strong>
+        <p>Coding jobs for 
+          <ul>
+            <li>CS Students</li>
+            <li>Bootcamp Alumni</li>
+            <li>Self Taugh Developers</li>
+          </ul>
+        No experience required.<br />
+        Free to Post.<br />
+        Free to Search.</p>
+        <p><%= link_to "Post A Job", new_job_path, class: "btn-flat blue-grey white-text"%></p>
       </div>
-      <p><%= paginate @jobs %></p>
 
-      <% end %>
+      <div id="rightSidebar" class="col m8 s12 offset-m4">
+      <% @jobs.each do |job| %>
+        <div class="card blue-grey darken-2">
+          <div class="card-content white-text">
+            <span class="card-title white-text"><%= link_to job.title, job.url, class: "white-text" %></span><br />
+            <% if job.category == 1 %>
+              Job
+            <% else %>
+              Internship
+            <% end %> - <%= job.created_at.to_date %><br />
+            <%= job.company %>
+          </div>
+          <div class="card-action">
+             <%= link_to "Apply Here", job.url %>
+          </div>
+        </div>
+        <p><%= paginate @jobs %></p>
+
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+</main>
