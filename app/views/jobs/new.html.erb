@@ -2,10 +2,10 @@
 
 <main>
   <div id="container" class="container">
-    <%= form_for(@job, html: {class: 'form-horizontal form-material-red'}) do |f| %>
+    <%= form_for(@job) do |f| %>
       <% if @job.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+          <h3><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h3>
 
           <ul>
           <% @job.errors.full_messages.each do |message| %>
@@ -40,15 +40,11 @@
         </div>
       </div>
       <div class="field form-group">
-        <%= f.label :category, class: 'col-sm-2 control-label' %>
         <div class="col-sm-10">
-          <%= f.radio_button :category, 1 %>
-          <%= f.label :category, 'Job', :value => 1, class: 'radio-inline' %>    
-          <br />
-          <%= f.radio_button :category, 2 %>
-          <%= f.label :category, 'Internship', :value => 2, class: 'radio-inline' %>      
+          <%= f.select(:category, options_for_select([['Job',1], ['Internship',2]])) %>
         </div>
       </div>
+    
       <div class="actions form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <%= f.submit "Submit Job", class: "btn blue-grey white-text" %>
