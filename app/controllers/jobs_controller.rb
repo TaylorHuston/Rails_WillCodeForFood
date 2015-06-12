@@ -8,17 +8,17 @@ class JobsController < ApplicationController
   end
   
   def create
-    if verify_recaptcha(:model => @job, :message => "Are you human?")
       @job = Job.new(params.require(:job).permit(:title, :company, :url, :category, :description))
 
-      if @job.save
-        redirect_to root_path
+      if verify_recaptcha(:model => @job, :message => "Are you human?")
+        if @job.save
+          redirect_to root_path
+        else
+          render 'new'
+        end
       else
         render 'new'
       end
-    else
-      render 'new'
-    end
   end
   
 end
