@@ -15,41 +15,47 @@
         </div>
       <% end %>
 
-      <div class="field form-group">
-        <%= f.label :title, class: 'col-sm-2 control-label' %>
+      <div class="row">
+        <%= f.label :title, class: 'col control-label' %>
         <div class="col-sm-10">
           <%= f.text_field :title, class: 'form-control' %>
         </div>
       </div>
-      <div class="field form-group">
-        <%= f.label :company, class: 'col-sm-2 control-label' %>
+      <div class="row">
+        <%= f.label :company, class: 'col control-label' %>
         <div class="col-sm-10">
           <%= f.text_field :company, class: 'form-control' %>
         </div>
       </div>
-      <div class="field form-group">
-        <%= f.label :url, class: 'col-sm-2 control-label' %>
+      <div class="row">
+        <%= f.label :url, class: 'col control-label' %>
         <div class="col-sm-10">
           <%= f.text_field :url, class: 'form-control' %>
         </div>
       </div>
-      <div class="field form-group">
-        <%= f.label :description, class: 'col-sm-2 control-label' %>
+      <div class="row">
+        <%= f.label :category, class: 'col control-label' %>
+        <div class="input-field">
+          <%= f.select(:category, options_for_select([['Job',1], ['Internship',2]])) %>
+        </div>
+      </div>
+      <div class="row">
+        <%= f.label :description, class: 'col control-label' %>
         <div class="col-sm-10">
           <%= f.text_field :description, class: 'form-control' %>
         </div>
       </div>
-      <div class="field form-group">
-        <div class="col-sm-10">
-          <%= f.select(:category, options_for_select([['Job',1], ['Internship',2]])) %>
-        </div>
-      </div>
-    
-      <div class="actions form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <%= f.submit "Submit Job", class: "btn blue-grey white-text" %>
+      <div class="row">
+        <div class="col offset-s10">
+          <%= f.submit "Submit Job", class: "btn blue-grey white-text", type: "submit" %>
         </div>
       </div>
     <% end %>
   </div>
 </main>
+
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
