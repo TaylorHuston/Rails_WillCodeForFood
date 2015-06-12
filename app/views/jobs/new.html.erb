@@ -5,7 +5,7 @@
     <%= form_for(@job) do |f| %>
       <% if @job.errors.any? %>
         <div id="error_explanation">
-          <h3><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h3>
+          <strong><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</strong>
 
           <ul>
           <% @job.errors.full_messages.each do |message| %>
@@ -46,7 +46,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col offset-s10">
+        <%= recaptcha_tags %>
+      </div>
+      <div class="row">
+        <div class="col">
           <%= f.submit "Submit Job", class: "btn blue-grey white-text", type: "submit" %>
         </div>
       </div>
