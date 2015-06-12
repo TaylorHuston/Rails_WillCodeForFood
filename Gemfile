@@ -28,6 +28,8 @@ gem 'tzinfo-data'
 
 gem "recaptcha", :require => "recaptcha/rails"
 
+gem 'validates_formatting_of'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
