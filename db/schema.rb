@@ -20,19 +20,18 @@ ActiveRecord::Schema.define(version: 20150612201508) do
     t.string   "title"
     t.string   "company"
     t.string   "url"
+    t.integer  "category"
+    t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "category"
-    t.date     "post_date"
-    t.text     "description"
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.string   "name",       limit: 50
-    t.string   "email",      limit: 50, null: false
-    t.string   "password"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "name",            limit: 50
+    t.string   "email",           limit: 50, null: false
+    t.string   "hashed_password"
   end
 
 end
