@@ -2,16 +2,21 @@
 
 <main>
   <div id="container" class="container">
-    <div class="row">
-      <strong>Will Code For Food</strong><br />
-      <p>Tired of searching through hundreds of job postings just to find ones for 'junior' candidates?</p>
-      <p>Tired of seeing that most of those positions for 'junion' candidates want 3-5 years of experience in 4 different stacks, some of which
-      aren't even 3 years old?</p>
-      <p>Well so was I. So after another particularly frustraing evening of job hunting, I came up with the idea for this site. Grabbed the domain
-      and got to work. The 1.0 version of this site was just a quick thing I threw up using Wordpress. This is the 2.0 version that I've built
-      from scratch using Rails. It's a little barebones right now, but I plan to keep working on and expanding it every chance I get!</p>
 
-      <p>Questions? Feedback? <a href="https://twitter.com/wcffjobs">Drop me a message and let me know!</a></p>
+      <div class="row">
+        <%= render partial: "shared/left_sidebar" %>
+
+        <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
+
+          <p>Tired of searching through hundreds of job postings just to find ones for 'junior' candidates?</p>
+          <p>Tired of seeing that most of those positions for 'junion' candidates want 3-5 years of experience in 4 different stacks, some of which
+          aren't even 3 years old?</p>
+          <p>Well so was I. So after another particularly frustraing evening of job hunting, I came up with the idea for this site. Grabbed the domain
+          and got to work. The 1.0 version of this site was just a quick thing I threw up using Wordpress. This is the 2.0 version that I've built
+          from scratch using Rails. It's a little barebones right now, but I plan to keep working on and expanding it every chance I get!</p>
+
+          <p>Questions? Feedback? <a href="https://twitter.com/wcffjobs">Drop me a message and let me know!</a></p>
+      </div>
     </div>
-
+  </div>
 </main>

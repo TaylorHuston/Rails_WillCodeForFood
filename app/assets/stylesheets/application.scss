@@ -14,3 +14,18 @@
  *= require_self
  */
 
+@import "materialize";
+
+
+main {
+  margin-top: 20px;
+}
+
+#leftSidebar {
+  position: fixed;
+  top: 80px;
+}
+
+.job {
+  padding: 20px 10%;
+}
