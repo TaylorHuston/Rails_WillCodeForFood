@@ -7,7 +7,7 @@
       <%= render partial: "shared/left_sidebar" %>
 
       <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
-      <% @jobs.reverse_each do |job| %>
+        <% @jobs.each do |job| %>
         <div class="card white">
           <div class="card-content">
             <span class="right-align"><%= job.created_at.to_date %></span> <br />
