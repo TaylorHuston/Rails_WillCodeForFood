@@ -11,7 +11,7 @@
         <div class="card white">
           <div class="card-content">
             <span class="right-align"><%= job.created_at.to_date %></span> <br />
-            <span class="card-title"><%= link_to job.title, job.url %></span><br />
+            <span class="card-title"><%= link_to job.title, job.url, :target => "_blank" %></span><br />
             <% if job.category == 1 %>
               Job
             <% else %>
@@ -22,7 +22,7 @@
             <%= job.description %>
           </div>
           <div class="card-action">
-             <%= link_to "Click Here To Apply", job.url %>
+             <%= link_to "Click Here To Apply", job.url, :target => "_blank" %>
           </div>
         </div>
         <p><%= paginate @jobs %></p>
