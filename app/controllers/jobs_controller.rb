@@ -8,7 +8,7 @@ class JobsController < ApplicationController
   end
   
   def create
-      @job = Job.new(params.require(:job).permit(:title, :company, :url, :category, :description, :location))
+      @job = Job.new(job_params)
 
       if verify_recaptcha(:model => @job, :message => "Are you human?")
         if @job.save
@@ -19,6 +19,11 @@ class JobsController < ApplicationController
       else
         render 'new'
       end
+  end
+  
+  private
+  def job_params
+    params.require(:job).permit(:title, :company, :url, :category, :description, :location)
   end
   
 end
