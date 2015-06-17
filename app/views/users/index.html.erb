@@ -10,6 +10,8 @@
         <% @users.each do |user| %>
         <div class="card white">
           <div class="card-content">
+            <%= link_to "Edit Info", {:controller => "users", :action => "edit", :id => user.id} %><br />
+            <%= link_to "Delete", {:controller => "users", :action => "delete", :id => user.id} %><br />
             <span class="card-title"><%= link_to user.name, {:controller => "users", :action => "show", :id => user.id} %></span><br />
             <%= user.email %> <br />
           </div>

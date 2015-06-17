@@ -1,2 +1,25 @@
-<h1>Users#delete</h1>
-<p>Find me in app/views/users/delete.html.erb</p>
+<%= render partial: "shared/navigation" %>
+
+<main>
+  <div id="container" class="container">
+
+    <div class="row">
+      <%= render partial: "shared/left_sidebar" %>
+
+            <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
+
+              <p>WARNING: Site is still in beta, posts may be deleted/cleared at any time.</p>
+              <%= form_for(@user, :url => {:action => 'destroy', :id => @user.id}, method: 'delete' ) do |f| %>
+              
+              <p>Are you sure you want to delete <%= @user.name %>?</p>
+
+          <div class="row">
+            <div class="col">
+              <%= f.submit "Delete", class: "btn blue-grey white-text", type: "submit" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>

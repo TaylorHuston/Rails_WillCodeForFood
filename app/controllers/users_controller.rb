@@ -45,9 +45,14 @@ class UsersController < ApplicationController
   end
 
   def delete
+    @user = User.find(params[:id])
   end
 
   def destroy
+    user = User.find(params[:id])
+    user.destroy
+    
+    redirect_to(:controller => "users", :action => "index")
   end
   
   private 
