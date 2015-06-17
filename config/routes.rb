@@ -1,11 +1,27 @@
 Rails.application.routes.draw do
-  get 'static_pages/about'
+#  get 'users/index'
+#
+#  get 'users/show'
+#
+#  get 'users/new'
+#
+#  get 'users/create'
+#
+#  get 'users/edit'
+#
+#  get 'users/update'
+#
+#  get 'users/delete'
+#
+#  get 'users/destroy'
+#
+#  get 'static_pages/about'
 
-  get 'jobs/index'
+#  get 'jobs/index'
+#
+#  get 'jobs/new'
 
-  get 'jobs/new'
-
-  resources :jobs
+  resources :jobs, :users
   root 'jobs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
