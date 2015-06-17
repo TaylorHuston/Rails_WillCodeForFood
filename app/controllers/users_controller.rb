@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     
     if verify_recaptcha(:model => @user, :message => "Are you human?")
       if @user.save
+        flash[:notice] = "Registration Successful"
         redirect_to(:controller => "users", :action => "show", :id => @user.id)
       else
         render 'new'
@@ -37,6 +38,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     if @user.update_attributes(user_params)
+      flash[:notice] = "Update Successful"
         redirect_to(:controller => "users", :action => "show", :id => @user.id)
     else
       render 'edit'
@@ -52,6 +54,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.destroy
     
+    flash[:notice] = "#{user.name} Deleted"
     redirect_to(:controller => "users", :action => "index")
   end
   
