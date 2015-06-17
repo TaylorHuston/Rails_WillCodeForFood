@@ -15,13 +15,14 @@ Rails.application.routes.draw do
 #
 #  get 'users/destroy'
 #
-#  get 'static_pages/about'
+
 
 #  get 'jobs/index'
 #
 #  get 'jobs/new'
 
   resources :jobs, :users
+  get 'static_pages/about'
   root 'jobs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

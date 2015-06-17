@@ -1,0 +1,22 @@
+<%= render partial: "shared/navigation" %>
+
+<main>
+  <div id="container" class="container">
+
+    <div class="row">
+      <%= render partial: "shared/left_sidebar" %>
+
+      <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
+        <% @users.each do |user| %>
+        <div class="card white">
+          <div class="card-content">
+            <span class="card-title"><%= link_to  user.name, {:controller => "users", :action => "show", :id => user.id} %></span><br />
+            <%= user.email %> <br />
+          </div>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
