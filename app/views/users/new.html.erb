@@ -1,2 +1,49 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<%= render partial: "shared/navigation" %>
+
+<main>
+  <div id="container" class="container">
+
+    <div class="row">
+      <%= render partial: "shared/left_sidebar" %>
+
+            <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
+
+              <p>WARNING: Site is still in beta, posts may be deleted/cleared at any time.</p>
+          <%= form_for(@user) do |f| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <strong><%= pluralize(@user.errors.count, "error") %> prohibited this job from being saved:</strong>
+
+              <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="row">
+            <%= f.label :name, class: 'col control-label' %>
+            <div class="col-sm-10">
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="row">
+            <%= f.label :email, class: 'col control-label' %>
+            <div class="col-sm-10">
+              <%= f.text_field :email, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="row">
+            <%= recaptcha_tags %>
+          </div>
+          <div class="row">
+            <div class="col">
+              <%= f.submit "Register", class: "btn blue-grey white-text", type: "submit" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
