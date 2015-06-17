@@ -1,0 +1,33 @@
+<%= render partial: "shared/navigation" %>
+
+<main>
+  <div id="container" class="container">
+
+    <div class="row">
+      <%= render partial: "shared/left_sidebar" %>
+
+      <div id="rightSidebar" class="col l7 m8 s12 offset-m4 offset-l5">
+        <% @jobs.each do |job| %>
+        <div class="card white">
+          <div class="card-content">
+            <span class="right-align"><%= job.created_at.to_date %></span> <br />
+            <span class="card-title"><%= link_to job.title, job.url, :target => "_blank" %></span><br />
+            <% if job.category == 1 %>
+              Job
+            <% else %>
+              Internship
+            <% end %> <br />
+            <%= job.company %> <br />
+            <%= job.location %> <br /><br />
+            <%= job.description %>
+          </div>
+          <div class="card-action">
+            <%= link_to "Edit", job.url, :target => "_blank" %>
+          </div>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>

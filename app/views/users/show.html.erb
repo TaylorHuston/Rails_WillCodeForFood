@@ -10,7 +10,8 @@
         <div class="card white">
           <div class="card-content">
             <span class="card-title"><%= @user.name %></span><br />
-            <%= @user.email %>
+            <%= @user.email %><br />
+            <%= link_to "My Posts", {:controller => "users", :action => "posts", :id => @user.id} %>
           </div>
         </div>
       </div>
