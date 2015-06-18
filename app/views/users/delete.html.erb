@@ -1,3 +1,4 @@
+<% @page_title="Delete User" %>
 <%= render partial: "shared/navigation" %>
 
 <main>
@@ -8,7 +9,7 @@
 
             <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
 
-              <p>WARNING: Site is still in beta, posts may be deleted/cleared at any time.</p>
+              <%= render partial: "shared/warning" %>
               <%= form_for(@user, :url => {:action => 'destroy', :id => @user.id}, method: 'delete' ) do |f| %>
               
               <p>Are you sure you want to delete <%= @user.name %>?</p>

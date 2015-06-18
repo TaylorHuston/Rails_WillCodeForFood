@@ -1,3 +1,4 @@
+<%= @page_title="New User" %>
 <%= render partial: "shared/navigation" %>
 
 <main>
@@ -6,9 +7,9 @@
     <div class="row">
       <%= render partial: "shared/left_sidebar" %>
 
-            <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
+        <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
 
-              <p>WARNING: Site is still in beta, posts may be deleted/cleared at any time.</p>
+          <%= render partial: "shared/warning" %>
           <%= form_for(@user) do |f| %>
           <% if @user.errors.any? %>
             <div id="error_explanation">
