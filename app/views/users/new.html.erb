@@ -7,33 +7,26 @@
     <div class="row">
       <%= render partial: "shared/left_sidebar" %>
 
-        <div id="rightSidebar" class="col l8 m7 s12 offset-m5 offset-l4">
+      <div id="rightSidebar" class="col l8 m7 s12 offset-m5 offset-l4">
 
-          <%= render partial: "shared/warning" %>
-          <%= form_for(@user) do |f| %>
-          <% if @user.errors.any? %>
-            <div id="error_explanation">
-              <strong><%= pluralize(@user.errors.count, "error") %> prohibited this job from being saved:</strong>
+        <%= render partial: "shared/warning" %>
 
-              <ul>
-              <% @user.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
+        <%= form_for(@user) do |f| %>
 
-          <%= render partial: "form", locals: {:f => f} %>
+          <%= render partial: "form", locals: {:user => @user, :f => f} %>
 
           <div class="row">
             <%= recaptcha_tags %>
           </div>
+
           <div class="row">
             <div class="col">
               <%= f.submit "Register", class: "btn blue-grey white-text", type: "submit" %>
             </div>
           </div>
+
         <% end %>
+
       </div>
     </div>
   </div>

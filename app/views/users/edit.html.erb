@@ -7,24 +7,13 @@
     <div class="row">
       <%= render partial: "shared/left_sidebar" %>
 
-        <div id="rightSidebar" class="col l8 m7 s12 offset-m5 offset-l4">
+      <div id="rightSidebar" class="col l8 m7 s12 offset-m5 offset-l4">
 
         <%= render partial: "shared/warning" %>
 
         <%= form_for(@user, :url => {:action => "update", :id => @user.id}) do |f| %>
-          <% if @user.errors.any? %>
-            <div id="error_explanation">
-              <strong><%= pluralize(@user.errors.count, "error") %> prohibited this job from being saved:</strong>
 
-              <ul>
-              <% @user.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
-
-          <%= render partial: "form", locals: {:f => f} %>
+          <%= render partial: "form", locals: {:user => @user, :f => f} %>
 
           <div class="row">
             <div class="col">
@@ -33,6 +22,7 @@
           </div>
 
         <% end %>
+
       </div>
     </div>
   </div>
