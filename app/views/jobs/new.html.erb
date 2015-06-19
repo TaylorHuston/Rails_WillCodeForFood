@@ -15,6 +15,10 @@
           <%= render partial: "form", locals: {:user => @user, :f => f} %>
 
           <div class="row">
+            <%= recaptcha_tags %>
+          </div>
+
+          <div class="row">
             <div class="col">
               <%= f.submit "Submit Job", class: "btn blue-grey white-text", type: "submit" %>
             </div>

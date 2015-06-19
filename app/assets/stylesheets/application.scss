@@ -29,3 +29,12 @@ main {
 .job {
   padding: 20px 10%;
 }
+
+textarea.materialize-textarea {
+  overflow-y: hidden;
+  /* prevents scroll bar flash */
+  padding: 0;
+  /* prevents text jump on Enter keypress */
+  resize: none;
+  min-height: 3rem;
+}
