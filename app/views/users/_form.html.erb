@@ -1,14 +1,4 @@
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <strong><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</strong>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
+<%= render_errors(@user) %>
 
 <div class="row">
   <%= f.label :name, class: 'col control-label' %>
