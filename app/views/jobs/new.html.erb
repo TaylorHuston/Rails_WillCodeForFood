@@ -1,3 +1,4 @@
+<%= @page_title="New Job" %>
 <%= render partial: "shared/navigation" %>
 
 <main>
@@ -6,13 +7,13 @@
     <div class="row">
       <%= render partial: "shared/left_sidebar" %>
 
-      <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
+      <div id="rightSidebar" class="col l8 m7 s12 offset-m5 offset-l4">
 
         <%= render :partial => "shared/warning" %>
 
         <%= form_for(@job) do |f| %>
 
-          <%= render partial: "form", locals: {:user => @user, :f => f} %>
+          <%= render partial: "form", locals: {:job => @job, :f => f} %>
 
           <div class="row">
             <%= recaptcha_tags %>

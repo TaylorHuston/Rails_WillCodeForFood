@@ -1,14 +1,4 @@
-<% if @job.errors.any? %>
-  <div id="error_explanation">
-    <strong><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</strong>
-
-    <ul>
-    <% @job.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render_errors(@job) %>
 
 <div class="row">
   <%= f.label :title, class: 'col control-label' %>
