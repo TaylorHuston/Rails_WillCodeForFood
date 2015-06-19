@@ -6,67 +6,22 @@
     <div class="row">
       <%= render partial: "shared/left_sidebar" %>
 
-            <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
+      <div id="rightSidebar" class="col l6 m7 s12 offset-m5 offset-l6">
 
-              <p>WARNING: Site is still in beta, posts may be deleted/cleared at any time.</p>
+        <%= render partial: "shared/warning" %>
+
         <%= form_for(@job) do |f| %>
-          <% if @job.errors.any? %>
-            <div id="error_explanation">
-              <strong><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</strong>
 
-              <ul>
-              <% @job.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
+          <%= render partial: "form", locals: {:user => @user, :f => f} %>
 
-          <div class="row">
-            <%= f.label :title, class: 'col control-label' %>
-            <div class="col-sm-10">
-              <%= f.text_field :title, class: 'form-control' %>
-            </div>
-          </div>
-          <div class="row">
-            <%= f.label :company, class: 'col control-label' %>
-            <div class="col-sm-10">
-              <%= f.text_field :company, class: 'form-control' %>
-            </div>
-          </div>
-          <div class="row">
-            <%= f.label :url, class: 'col control-label' %>
-            <div class="col-sm-10">
-              <%= f.text_field :url, class: 'form-control' %>
-            </div>
-          </div>
-          <div class="row">
-            <%= f.label :city, class: 'col control-label' %>
-            <div class="col-sm-10">
-              <%= f.text_field :location, class: 'form-control' %>
-            </div>
-          </div>
-          <div class="row">
-            <%= f.label :category, class: 'col control-label' %>
-            <div class="input-field">
-              <%= f.select(:category, options_for_select([['Job',1], ['Internship',2]])) %>
-            </div>
-          </div>
-          <div class="row">
-            <%= f.label :description, class: 'col control-label' %>
-            <div class="col-sm-10">
-              <%= f.text_field :description, class: 'form-control' %>
-            </div>
-          </div>
-          <div class="row">
-            <%= recaptcha_tags %>
-          </div>
           <div class="row">
             <div class="col">
               <%= f.submit "Submit Job", class: "btn blue-grey white-text", type: "submit" %>
             </div>
           </div>
-        <% end %>
+
+          <% end %>
+
       </div>
     </div>
   </div>
