@@ -1,8 +1,8 @@
 #Will Code For Food
 
-Status: Alpha, not live
+Status: Beta
 
-Heroku: <a href="willcodeforfood.herokuapp.com">willcodeforfood.herokuapp.com</a>
+Heroku: <a href="willcodeforfood.io">willcodeforfood.io</a>
 
 A job board for new developers. Fresh grads, bootcamp alumni, etc.
 
