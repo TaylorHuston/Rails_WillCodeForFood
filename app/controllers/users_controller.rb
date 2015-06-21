@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_action :confirm_logged_in, :except => [:new, :create]
+  
   def index
     @users = User.all
   end
@@ -61,6 +64,16 @@ class UsersController < ApplicationController
   private 
     def user_params
       params.require(:user).permit(:name, :email)
+    end
+  
+    def confirm_logged_in
+      if session[:user_id] == nil
+        flash[:notice] = "Please log in"
+        redirect_to(:controller => "access", :action => "login")
+        return false
+      else
+        return true
+      end
     end
   
 end

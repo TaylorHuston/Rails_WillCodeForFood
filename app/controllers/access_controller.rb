@@ -15,6 +15,8 @@ class AccessController < ApplicationController
     end
     
     if auth_user
+      session[:user_id] = auth_user.id
+      session[:email] = auth_user.email
       flash[:notice] = "Log-in Successfull"
       redirect_to(:controller => "users", :action => "show", :id => auth_user.id)
     else
@@ -23,7 +25,9 @@ class AccessController < ApplicationController
     end
   end
   
-  def logout
+  def logout      
+    session[:user_id] = nil
+    session[:email] = nil
     flash[:notice] = "Logged Out"
     redirect_to(:action => "login")
   end
