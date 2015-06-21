@@ -1,0 +1,41 @@
+<% @page_title="Login" %>
+<%= render partial: "shared/navigation" %>
+
+<main>
+  <div id="container" class="container">
+
+    <div class="row">
+      <%= render partial: "shared/left_sidebar" %>
+
+      <div id="rightSidebar" class="col l8 m7 s12 offset-m5 offset-l4">
+
+        <%= render partial: "shared/warning" %>
+
+        <%= form_tag(:action => "attempt_login") do %>
+
+          <div class="row">
+            <div class="col">
+              <%= label_tag(:email)  %><br />
+              <%= text_field_tag(:email) %>
+            </div>
+          </div>
+                
+          <div class="row">
+            <div class="col">
+              <%= label_tag(:password)  %><br />
+              <%= password_field_tag(:password) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <%= submit_tag "Login", class: "btn blue-grey white-text", type: "submit" %>
+            </div>
+          </div>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</main>
