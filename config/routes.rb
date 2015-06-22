@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'login', :to=> "access#login"
   post 'access/attempt_login'
+  get 'access/logout'
 
 #  get 'users/index'
 #
