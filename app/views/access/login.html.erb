@@ -13,17 +13,19 @@
 
         <%= render partial: "shared/flash" %>
 
+        <p>Not already a member? <%= link_to "Sign Up Here", :controller => "users", :action => "new" %></p>
+
         <%= form_tag(:action => "attempt_login") do %>
 
           <div class="row">
-            <div class="col">
+            <div class="col s10">
               <%= label_tag(:email)  %><br />
               <%= text_field_tag(:email) %>
             </div>
           </div>
                 
           <div class="row">
-            <div class="col">
+            <div class="col s10">
               <%= label_tag(:password)  %><br />
               <%= password_field_tag(:password) %>
             </div>
