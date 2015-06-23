@@ -13,6 +13,10 @@
           
         <div class="card white">
           <div class="card-content">
+            <% if @user.admin == true %>
+              <strong>Admin</strong><br />
+            <% end %>
+
             <%= link_to "Edit Info", {:controller => "users", :action => "edit", :id => @user.id} %><br />
             <span class="card-title"><%= @user.name %></span><br />
             <%= @user.email %><br />

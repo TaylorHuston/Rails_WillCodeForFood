@@ -1,2 +1,20 @@
-<h1>Admin#index</h1>
-<p>Find me in app/views/admin/index.html.erb</p>
+<% @page_title="Admin" %>
+<%= render partial: "shared/navigation" %>
+
+<main>
+  <div id="container" class="container">
+
+    <div class="row">
+      <%= render partial: "shared/left_sidebar" %>
+
+      <div id="rightSidebar" class="col l8 m7 s12 offset-m5 offset-l4">
+
+        <%= render partial: "shared/flash" %>
+
+        <%= link_to "Edit Users", {:controller => "users", :action => "edit", :id => user.id} %><br />
+        <%= link_to "Edit Jobs", {:controller => "users", :action => "delete", :id => user.id} %><br />
+
+      </div>
+    </div>
+  </div>
+</main>

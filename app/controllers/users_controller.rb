@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :confirm_logged_in, :except => [:new, :create]
+  before_action :confirm_access, :except => [:new, :create]
   
   def index
     @users = User.all
@@ -66,14 +66,26 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email)
     end
   
-    def confirm_logged_in
+    def confirm_access
       if session[:user_id] == nil
         flash[:notice] = "Please log in"
         redirect_to(:controller => "access", :action => "login")
         return false
-      else
+      end
+
+      if params[:id] == session[:user_id]
         return true
       end
+
+      if User.find(session[:user_id]).admin == true
+        return true
+      end
+
+      flash[:notice] = "You do not have access to do that"
+      redirect_to(root_path)
+
+      return false
+
     end
   
 end
