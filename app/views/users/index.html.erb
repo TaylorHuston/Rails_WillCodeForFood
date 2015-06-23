@@ -1,28 +1,13 @@
 <% @page_title="All Users" %>
-<%= render partial: "shared/navigation" %>
-
-<main>
-  <div id="container" class="container">
-
-    <div class="row">
-      <%= render partial: "shared/left_sidebar" %>
-
-      <div id="rightSidebar" class="col l8 m7 s12 offset-m5 offset-l4">
-
-        <%= render partial: "shared/flash" %>
         
-        <% @users.each do |user| %>
-        <div class="card white">
-          <div class="card-content">
-            <%= link_to "Edit Info", {:controller => "users", :action => "edit", :id => user.id} %><br />
-            <%= link_to "Delete", {:controller => "users", :action => "delete", :id => user.id} %><br />
-            <span class="card-title"><%= link_to user.name, {:controller => "users", :action => "show", :id => user.id} %></span><br />
-            <%= user.email %> <br />
-          </div>
-        </div>
-
-        <% end %>
-      </div>
-    </div>
+<% @users.each do |user| %>
+<div class="card white">
+  <div class="card-content">
+    <%= link_to "Edit Info", {:controller => "users", :action => "edit", :id => user.id} %><br />
+    <%= link_to "Delete", {:controller => "users", :action => "delete", :id => user.id} %><br />
+    <span class="card-title"><%= link_to user.name, {:controller => "users", :action => "show", :id => user.id} %></span><br />
+    <%= user.email %> <br />
   </div>
-</main>
+</div>
+
+<% end %>
