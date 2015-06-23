@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   
   get 'admin/index'
 
-  get 'login', :to=> "access#login"
+  get 'login', :to => 'access#login'
   post 'access/attempt_login'
-  get 'access/logout'
+  get 'logout', :to =>'access#logout'
 
 #  get 'users/index'
 #

@@ -67,17 +67,19 @@ class UsersController < ApplicationController
     end
   
     def confirm_access
+      #debugger
+
       if session[:user_id] == nil
         flash[:notice] = "Please log in"
         redirect_to(:controller => "access", :action => "login")
         return false
       end
 
-      if params[:id] == session[:user_id]
+      if User.find(session[:user_id]).admin == true
         return true
       end
 
-      if User.find(session[:user_id]).admin == true
+      if params[:id].to_i == session[:user_id]
         return true
       end
 
