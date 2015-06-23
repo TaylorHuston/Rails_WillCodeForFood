@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if verify_recaptcha(:model => @user, :message => "Are you human?")
       if @user.save
         flash[:notice] = "Registration Successful"
-        redirect_to(:controller => "users", :action => "show", :id => @user.id)
+        redirect_to(:controller => "access", :action => "login")
       else
         render 'new'
       end
