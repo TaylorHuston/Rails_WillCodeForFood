@@ -23,7 +23,7 @@
             <%= job.description %>
           </div>
           <div class="card-action">
-            <%= link_to "Edit", "#" %>
+            <%= link_to "Edit", :controller => "jobs", :action => "edit", :id => job.id %>
           </div>
         </div>
 

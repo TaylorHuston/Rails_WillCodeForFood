@@ -1,0 +1,35 @@
+<% @page_title="Edit Job" %>
+<%= render partial: "shared/navigation" %>
+
+<main>
+  <div id="container" class="container">
+
+    <div class="row">
+      <%= render partial: "shared/left_sidebar" %>
+
+      <div id="rightSidebar" class="col l8 m7 s12 offset-m5 offset-l4">
+
+        <%= render :partial => "shared/warning" %>
+
+        <%= form_for(@job, :url => {:action => "update", :id => @job.id}) do |f| %>
+
+          <%= render partial: "form", locals: {:job => @job, :f => f} %>
+
+          <div class="row">
+            <div class="col">
+              <%= f.submit "Submit Job", class: "btn blue-grey white-text", type: "submit" %>
+            </div>
+          </div>
+
+          <% end %>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
