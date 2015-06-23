@@ -7,7 +7,7 @@
     <div class="row">
       <%= render partial: "shared/left_sidebar" %>
 
-      <div id="rightSidebar" class="col l7 m8 s12 offset-m4 offset-l5">
+      <div id="rightSidebar" class="col l9 m8 s12 offset-m4 offset-l3">
 
         <%= render partial: "shared/flash" %>
           
@@ -17,9 +17,9 @@
               <strong>Admin</strong><br />
             <% end %>
 
-            <%= link_to "Edit Info", {:controller => "users", :action => "edit", :id => @user.id} %><br />
-            <span class="card-title"><%= @user.name %></span><br />
+            <span class="card-title blue-text text-darken-2"><%= @user.name %></span><br />
             <%= @user.email %><br />
+            <%= link_to "Edit Info", {:controller => "users", :action => "edit", :id => @user.id} %><br />
             <%= link_to "My Posts", {:controller => "users", :action => "posts", :id => @user.id} %>
           </div>
         </div>
