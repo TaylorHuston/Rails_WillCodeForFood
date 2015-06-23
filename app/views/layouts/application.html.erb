@@ -9,7 +9,24 @@
 </head>
 <body class="grey lighten-4">
 
-<%= yield %>
+  <%= render partial: "shared/navigation" %>
+
+  <main>
+    <div id="container" class="container">
+
+      <div class="row">
+        <%= render partial: "shared/left_sidebar" %>
+
+        <div id="rightSidebar" class="col l9 m8 s12 offset-m4 offset-l3">
+
+          <%= render partial: "shared/flash" %>
+
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </main>
+
 <%= debug(params) if Rails.env.development? %>
 </body>
 </html>
