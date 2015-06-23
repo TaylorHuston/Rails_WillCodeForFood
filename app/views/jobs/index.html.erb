@@ -1,38 +1,28 @@
 <% @page_title="All Jobs" %>
-<%= render partial: "shared/navigation" %>
 
-<main>
-  <div id="container" class="container">
+<% @jobs.each do |job| %>
+  <div class="card white">
 
-    <div class="row">
-      <%= render partial: "shared/left_sidebar" %>
+    <div class="card-content">
 
-      <div id="rightSidebar" class="col l9 m8 s12 offset-m4 offset-l3">
-
-        <%= render partial: "shared/flash" %>
-
-        <% @jobs.each do |job| %>
-        <div class="card white">
-          <div class="card-content">
-            <span class="right-align"><%= job.created_at.to_date %></span> <br />
-            <span class="card-title"><%= link_to job.title, job.url, :target => "_blank" %></span><br />
-            <% if job.category == 1 %>
-              Job
-            <% else %>
-              Internship
-            <% end %> <br />
-            <%= job.company %> <br />
-            <%= job.location %> <br /><br />
-            <%= job.description %>
-          </div>
-          <div class="card-action">
-             <%= link_to "Click Here To Apply", job.url, :target => "_blank" %>
-          </div>
-        </div>
-        <p><%= paginate @jobs %></p>
-
-        <% end %>
-      </div>
+      <span class="right-align"><%= job.created_at.to_date %></span> <br />
+      <span class="card-title"><%= link_to job.title, job.url, :target => "_blank" %></span><br />
+      <% if job.category == 1 %>
+        Job
+      <% else %>
+        Internship
+      <% end %> <br />
+      <%= job.company %> <br />
+      <%= job.location %> <br /><br />
+      <%= job.description %>
     </div>
+
+    <div class="card-action">
+       <%= link_to "Click Here To Apply", job.url, :target => "_blank" %>
+    </div>
+
   </div>
-</main>
+
+  <p><%= paginate @jobs %></p>
+
+<% end %>
