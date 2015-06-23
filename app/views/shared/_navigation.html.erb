@@ -6,13 +6,12 @@
           <li><%= link_to "Jobs", :controller => "jobs", :action => "index" %></li>
           <li><%= link_to "Post", :controller => "jobs", :action => "new" %></li>
           <li><%= link_to "About", :controller => "static_pages", :action => "about" %></li>
-          <li>
-            <% if session[:user_id] == nil %>
-              <%= link_to "Login", :controller => "access", :action => "login" %>
-            <% else %>
-              <%= link_to "Admin", :controller => "users", :action => "show", :id => session[:user_id] %>
-            <% end %>
-          </li>
+          <% if session[:user_id] == nil %>
+          <li><%= link_to "Login", :controller => "access", :action => "login" %></li>
+          <% else %>
+          <li><%= link_to "Admin", :controller => "users", :action => "show", :id => session[:user_id] %></li>
+          <li><%= link_to "Logout", :controller => "access", :action => "logout" %></li>
+          <% end %>
         </ul>
       </div>
     </nav>
