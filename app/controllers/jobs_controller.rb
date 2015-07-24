@@ -9,7 +9,7 @@ class JobsController < ApplicationController
   def new
     @job = Job.new
   end
-  
+
   def create
       @job = Job.new(job_params)
 
@@ -24,7 +24,7 @@ class JobsController < ApplicationController
         render 'new'
       end
   end
-  
+
   def edit
     @job = Job.find(params[:id])
   end
@@ -70,5 +70,5 @@ class JobsController < ApplicationController
       return false
 
     end
-  
+
 end
