@@ -1,36 +1,15 @@
 Rails.application.routes.draw do
-  
-  get 'admin/index'
+
+  root 'jobs#index'
 
   get 'login', :to => 'access#login'
   post 'access/attempt_login'
   get 'logout', :to =>'access#logout'
 
-#  get 'users/index'
-#
-#  get 'users/show'
-#
-#  get 'users/new'
-#
-#  get 'users/create'
-#
-#  get 'users/edit'
-#
-#  get 'users/update'
-#
-#  get 'users/delete'
-#
-#  get 'users/destroy'
-#
-
-
-#  get 'jobs/index'
-#
-#  get 'jobs/new'
-
-  root 'jobs#index'
   get 'static_pages/about'
+
   resources :jobs
+
   resources :users do
     member do
       get 'posts'

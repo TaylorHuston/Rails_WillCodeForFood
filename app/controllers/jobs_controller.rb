@@ -4,6 +4,12 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Job.order("created_at DESC").page(params[:page]).per(10)
+    @user_id = session[:user_id]
+    if session[:user_id] != nil
+      @is_admin = User.find(session[:user_id]).admin
+    else
+      @is_admin = false
+    end
   end
 
   def new
@@ -40,6 +46,11 @@ class JobsController < ApplicationController
     end
   end
 
+  def destroy
+    job = Job.find(params[:id])
+    job.destroy
+    redirect_to(:controller => "jobs", :action => "index")
+  end
 
   private
     def job_params
