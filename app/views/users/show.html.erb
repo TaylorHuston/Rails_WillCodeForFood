@@ -1,14 +1,16 @@
 <% @page_title="User Info" %>
 
 <div class="card white">
-  <div class="card-content">
+  <div class="card-content user">
     <% if @user.admin == true %>
       <strong>Admin</strong><br />
     <% end %>
 
-    <span class="card-title blue-text text-darken-2"><%= @user.name %></span><br />
-    <%= @user.email %><br />
-    <%= link_to "Edit Info", {:controller => "users", :action => "edit", :id => @user.id} %><br />
-    <%= link_to "My Posts", {:controller => "users", :action => "posts", :id => @user.id} %>
+    <p>
+      <span class="card-title blue-text text-darken-2"><%= @user.name %></span><br />
+      <%= @user.email %></p>
+    <p>
+      <%= link_to "Edit Profile", {:controller => "users", :action => "edit", :id => @user.id} %><br />
+      <%= link_to "View Posts", {:controller => "users", :action => "posts", :id => @user.id} %></p>
   </div>
 </div>
