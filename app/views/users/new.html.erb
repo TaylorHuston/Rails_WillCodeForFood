@@ -1,17 +1,21 @@
 <% @page_title="New User" %>
 
 <%= form_for(@user) do |f| %>
+  <div class="card white">
 
-  <%= render partial: "form", locals: {:user => @user, :f => f} %>
+    <div class="card-content">
 
-  <div class="row">
-    <%= recaptcha_tags %>
-  </div>
+      <%= render partial: "form", locals: {:user => @user, :f => f} %>
 
-  <div class="row">
-    <div class="col">
-      <%= f.submit "Register", class: "btn blue-grey white-text", type: "submit" %>
+      <div class="row">
+        <%= recaptcha_tags %>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= f.submit "Register", class: "btn blue-grey white-text", type: "submit" %>
+        </div>
+      </div>
     </div>
-  </div>
-
+</div>
 <% end %>
