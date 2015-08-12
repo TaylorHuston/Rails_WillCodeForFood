@@ -34,6 +34,10 @@ main {
   padding: 0 0 10px 0;
 }
 
+.line {
+  display: inline-block;
+}
+
 textarea.materialize-textarea {
   overflow-y: hidden;
   /* prevents scroll bar flash */
