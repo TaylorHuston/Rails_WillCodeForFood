@@ -1,18 +1,23 @@
 <% @page_title="New Job" %>
 
 <%= form_for(@job) do |f| %>
+  <div class="card white">
 
-  <%= render partial: "form", locals: {:job => @job, :f => f} %>
+    <div class="card-content">
 
-  <div class="row">
-    <%= recaptcha_tags %>
-  </div>
+      <%= render partial: "form", locals: {:job => @job, :f => f} %>
 
-  <div class="row">
-    <div class="col">
-      <%= f.submit "Submit Job", class: "btn blue-grey white-text", type: "submit" %>
+      <div class="row">
+        <%= recaptcha_tags %>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= f.submit "Submit Job", class: "btn blue-grey white-text", type: "submit" %>
+        </div>
+      </div>
     </div>
-  </div>
+</div>
 
 <% end %>
 
