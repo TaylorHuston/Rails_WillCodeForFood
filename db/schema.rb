@@ -27,11 +27,10 @@ ActiveRecord::Schema.define(version: 20150623044902) do
     t.string   "title"
     t.string   "company"
     t.string   "url"
+    t.integer  "category"
+    t.text     "description"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.integer  "category"
-    t.date     "post_date"
-    t.string   "description"
     t.string   "location",    limit: 50
     t.integer  "user_id"
   end
