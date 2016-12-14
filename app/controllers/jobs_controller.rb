@@ -22,6 +22,7 @@ class JobsController < ApplicationController
       if verify_recaptcha(:model => @job, :message => "Are you human?")
         @job.user_id = session[:user_id]
         if @job.save
+          flash[:notice] = "Creation Successful"
           redirect_to root_path
         else
           render 'new'
