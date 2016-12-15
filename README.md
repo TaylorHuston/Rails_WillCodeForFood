@@ -2,7 +2,7 @@
 
 Status: Beta
 
-Heroku: <a href="willcodeforfood.io">willcodeforfood.io</a>
+Heroku: <a href="http://www.willcodeforfood.io">willcodeforfood.io</a>
 
 A job board for new developers. Fresh grads, bootcamp alumni, etc.
 
